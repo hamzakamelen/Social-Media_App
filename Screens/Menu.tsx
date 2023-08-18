@@ -15,7 +15,7 @@ const Menu = () => {
               {/* <Image style={styles.h20} source={{ uri: 'https://media.licdn.com/dms/image/D4D03AQHUCRbI1yHJNw/profile-displayphoto-shrink_200_200/0/1680301081683?e=1697673600&v=beta&t=S4ugPq5L07JEKYGFA0-Xd-8vukE26qUabHLMKvLaqlo' }} /> */}
               <Text style={[styles.textWhite, styles.textBold, styles.ms3, styles.fs5]}>Hamza Kamelen</Text>
               <Text style={[styles.ms3]}>MERN Stack Developer</Text>
-              <HMIcon name="wine-glass" color='white' />
+              <HMIcon name="home" color='white' />
             </View>
             <View style={[styles.p1, { marginTop: -20 }]}>
               <Image style={{ height: 400, width: '100%' }} source={{ uri: 'https://assets.visme.co/templates/banners/thumbnails/i_We-re-Hiring-LinkedIn-Post_full.jpg' }} />
