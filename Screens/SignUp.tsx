@@ -1,66 +1,109 @@
-import React, { useState } from 'react'
-import { Image, StyleSheet, Alert, Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native'
+import  { useState } from 'react'
+import { Image, StyleSheet,ToastAndroid, Alert, Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import styles from '../style/style'
 import { SafeAreaView } from 'react-native-safe-area-context';
-const Login = ({ navigation }: any) => {
-  const [Name, setName] = useState("");
-  const [Email, setEmail] = useState("");
-  const [Password, setPassword] = useState("");
-  const [ConfirmPassword, setConfirmPassword] = useState("");
-  const data = {
-    Name: Name,
-    Email: Email,
-    Password: Password,
-    ConfirmPassword: ConfirmPassword
+import ImagePicker, { ImageOrVideo } from 'react-native-image-crop-picker'
+import HMIcon from '../Components/Icons';
+import { useDispatch } from 'react-redux';
+import { add } from '../redux/reducer/signupslice';
+
+function SignUp ({ navigation }: any) {
+  const [Name, setName] = useState('');
+  const [Email, setEmail] = useState('');
+  const [Password, setPassword] = useState('');
+  const [ConfirmPassword, setConfirmPassword] = useState('');
+  const [avatar, setavatar] = useState('');
+  const dispatch = useDispatch();
+
+  const uploadImage = () => {
+    ImagePicker.openPicker({
+      width: 300,
+      height: 300,
+      cropping: true,
+      compressImageQuality: 0.9,
+      includeBase64: true,
+    }).then((image: ImageOrVideo | any) => {
+      if(image){
+      setavatar('data:image/jpeg;base64,' + image?.data)
+      }
+    })
   }
 
   const Submit = () => {
-    navigation.navigate('Login')
-    Alert.alert("Account Created Successfully")
-    console.log(data);
+    if(avatar==''||Name==''||Email==''||Password==''||ConfirmPassword==''){
+      ToastAndroid.show(
+        "Please Fill All Fields",
+        ToastAndroid.SHORT
+      )
+    }else{
+      dispatch(
+        add({
+          profilepicture: avatar,
+          name: Name,
+          email: Email,
+          password: Password,
+          confirmpassword: ConfirmPassword
+        })
+      )
+      navigation.navigate('Login')
+      Alert.alert("Account Created Successfully")
+    }
   }
 
-  
+
+
+
   return (
     <SafeAreaView>
       <View style={[styles.bgWhite, styles.h100, styles.p1]}>
-        <Image style={STYLE.image}
-          source={require('../Assets/Threads.png')} />
-        <Text
-          style={[STYLE.heading, styles.textCenter, styles.my3, styles.textBold,
-          styles.textBlack]}>Sign Up</Text>
-        <TextInput style={[styles.input, { marginTop: -5 }]}
-          onChangeText={(e) => setName(e)}
-          placeholder='Name'
-          placeholderTextColor='black'
-        />
-        <TextInput style={[styles.input, styles.my2]}
-          onChangeText={(e) => setEmail(e)}
-          placeholder='Email'
-          placeholderTextColor='black'
-        />
-        <TextInput style={[styles.input]}
-          onChangeText={(e) => setPassword(e)}
-          placeholder='Password'
-          placeholderTextColor='black'
-        />
-        <TextInput style={[styles.input, styles.my2]}
-          onChangeText={(e) => setConfirmPassword(e)}
-          placeholder='Confirm Password'
-          placeholderTextColor='black'
-        />
-        <View style={[styles.flexCenter]}>
-          <Text style={[styles.textBlack, styles.fs5]}>
-            Already have an Account?
-            <Text onPress={() => navigation.navigate('Login')} style={[styles.fs5, styles.textBold,
-            styles.textSecondary]}> Login</Text>
-          </Text>
-        </View>
-        <TouchableOpacity onPress={Submit} style={[styles.btn, styles.bgBlack, styles.my1]}>
+        <ScrollView>
+          <Image style={STYLE.image}
+            source={require('../Assets/Threads.png')} />
           <Text
-            style={[styles.textCenter, styles.textBold,
-            styles.textWhite, styles.fs3]}>Sign Up</Text>
-        </TouchableOpacity>
+            style={[STYLE.heading, styles.textCenter, styles.my3, styles.textBold,
+            styles.textBlack]}>Sign Up</Text>
+          <Image style={{ height: 90, width: 90, marginLeft: 10,borderRadius: 20, }} source={{ uri: avatar ? avatar : 'https://www.fote.org.uk/wp-content/uploads/2017/03/profile-icon.png' }} />
+          <View style={styles.flexRow}>
+            <HMIcon name="cloud-upload" color="grey" size={27} />
+            <Text onPress={uploadImage} style={[styles.textBlack, { marginTop: 2, marginLeft: 5 }, styles.fs5, styles.mb2]}>Upload/Change Picture</Text>
+          </View>
+          <TextInput style={[styles.input, { marginTop: -5 }]}
+            value={Name}
+            onChangeText={(e) => setName(e)}
+            placeholder='Name'
+            placeholderTextColor='black'
+          />
+          <TextInput style={[styles.input, styles.my2]}
+            value={Email}
+            onChangeText={(e) => setEmail(e)}
+            placeholder='Email'
+            placeholderTextColor='black'
+          />
+          <TextInput style={[styles.input]}
+            value={Password}
+            onChangeText={(e) => setPassword(e)}
+            placeholder='Password'
+            placeholderTextColor='black'
+          />
+          <TextInput style={[styles.input, styles.my2]}
+            value={ConfirmPassword}
+            onChangeText={(e) => setConfirmPassword(e)}
+            placeholder='Confirm Password'
+            placeholderTextColor='black'
+          />
+          <View style={[styles.flexCenter]}>
+            <Text style={[styles.textBlack, styles.fs5]}>
+              Already have an Account?
+              <Text onPress={() => navigation.navigate('Login')} style={[styles.fs5, styles.textBold,
+              styles.textSecondary]}> Login</Text>
+            </Text>
+          </View>
+          <TouchableOpacity onPress={Submit} style={[styles.btn, styles.bgBlack, styles.my1]}>
+            <Text
+              style={[styles.textCenter, styles.textBold,
+              styles.textWhite, styles.fs3]}>Sign Up</Text>
+          </TouchableOpacity>
+        </ScrollView>
       </View>
     </SafeAreaView>
   )
@@ -76,4 +119,4 @@ const STYLE = StyleSheet.create({
     fontSize: 40,
   },
 })
-export default Login
+export default SignUp

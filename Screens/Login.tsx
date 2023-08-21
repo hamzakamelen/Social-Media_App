@@ -1,18 +1,33 @@
-import React, { useState } from 'react'
-import { Image, StyleSheet, Alert, Text, View, TextInput, Button, TouchableOpacity, SafeAreaView } from 'react-native'
+import { useState } from 'react'
+import { Image, StyleSheet, Alert, Text, View, TextInput, Button, TouchableOpacity, SafeAreaView, ToastAndroid } from 'react-native'
 import styles from '../style/style'
-const Login = ({ navigation }: any) => {
+import { useDispatch } from 'react-redux';
+import { add } from '../redux/reducer/loginslice';
+
+function Login ({ navigation }: any)  {
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
-
-    const data = {
-        Email: Email,
-        Password: Password
-    }
-
+    const dispatch = useDispatch();
     const Submit = () => {
-        navigation.navigate('Menu')
-        console.log(data);
+        if (Email == '' || Password == '') {
+            ToastAndroid.show(
+                "Please Fill All Fields",
+                ToastAndroid.SHORT
+            )
+        } else {
+            dispatch(
+                add({
+                    email: Email,
+                    password: Password,
+                })
+            )
+            ToastAndroid.showWithGravity(
+                'Login Successful',
+                ToastAndroid.SHORT,
+                ToastAndroid.BOTTOM
+            )
+            navigation.navigate('Home')
+        }
     }
 
 
@@ -25,11 +40,13 @@ const Login = ({ navigation }: any) => {
                     style={[STYLE.heading, styles.textCenter, styles.my5, styles.textBold,
                     styles.textBlack]}>Login</Text>
                 <TextInput style={[styles.input]}
+                    value={Email}
                     placeholder='Email'
                     onChangeText={(e) => setEmail(e)}
                     placeholderTextColor='black'
                 />
                 <TextInput style={[styles.input, styles.my2]}
+                    value={Password}
                     placeholder='Password'
                     onChangeText={(e) => setPassword(e)}
                     placeholderTextColor='black'
