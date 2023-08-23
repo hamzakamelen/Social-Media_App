@@ -57,7 +57,7 @@ function TabNavigation() {
                 <Tab.Screen name="Post" component={Post}
                     options={{
                         tabBarIcon: () => (
-                            <View style={[{ marginTop: -45 }]}>
+                            <View style={[{ marginTop: -35 }]}>
                                 <View style={[styles.bgDanger, styles.roundedPill, { marginLeft: -4 }]}>
                                     <HMIcon name='add' size={45} color="white" />
                                 </View>

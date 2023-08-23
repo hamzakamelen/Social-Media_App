@@ -2,49 +2,49 @@ import  { useState } from 'react'
 import { Image, StyleSheet,ToastAndroid, Alert, Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import styles from '../style/style'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import ImagePicker, { ImageOrVideo } from 'react-native-image-crop-picker'
+// import ImagePicker, { ImageOrVideo } from 'react-native-image-crop-picker'
 import HMIcon from '../Components/Icons';
-import { useDispatch } from 'react-redux';
-import { add } from '../redux/reducer/signupslice';
+// import { useDispatch } from 'react-redux';
+// import { add } from '../redux/reducer/signupslice';
 
 function SignUp ({ navigation }: any) {
   const [Name, setName] = useState('');
   const [Email, setEmail] = useState('');
   const [Password, setPassword] = useState('');
   const [ConfirmPassword, setConfirmPassword] = useState('');
-  const [avatar, setavatar] = useState('');
-  const dispatch = useDispatch();
+  // const [avatar, setavatar] = useState('');
+  // const dispatch = useDispatch();
 
-  const uploadImage = () => {
-    ImagePicker.openPicker({
-      width: 300,
-      height: 300,
-      cropping: true,
-      compressImageQuality: 0.9,
-      includeBase64: true,
-    }).then((image: ImageOrVideo | any) => {
-      if(image){
-      setavatar('data:image/jpeg;base64,' + image?.data)
-      }
-    })
-  }
+  // const uploadImage = () => {
+  //   ImagePicker.openPicker({
+  //     width: 300,
+  //     height: 300,
+  //     cropping: true,
+  //     compressImageQuality: 0.9,
+  //     includeBase64: true,
+  //   }).then((image: ImageOrVideo | any) => {
+  //     if(image){
+  //     setavatar('data:image/jpeg;base64,' + image?.data)
+  //     }
+  //   })
+  // }
 
   const Submit = () => {
-    if(avatar==''||Name==''||Email==''||Password==''||ConfirmPassword==''){
+    if(Name==''||Email==''||Password==''||ConfirmPassword==''){
       ToastAndroid.show(
         "Please Fill All Fields",
         ToastAndroid.SHORT
       )
     }else{
-      dispatch(
-        add({
-          profilepicture: avatar,
-          name: Name,
-          email: Email,
-          password: Password,
-          confirmpassword: ConfirmPassword
-        })
-      )
+      // dispatch(
+      //   add({
+      //     profilepicture: avatar,
+      //     name: Name,
+      //     email: Email,
+      //     password: Password,
+      //     confirmpassword: ConfirmPassword
+      //   })
+      // )
       navigation.navigate('Login')
       Alert.alert("Account Created Successfully")
     }
@@ -62,11 +62,11 @@ function SignUp ({ navigation }: any) {
           <Text
             style={[STYLE.heading, styles.textCenter, styles.my3, styles.textBold,
             styles.textBlack]}>Sign Up</Text>
-          <Image style={{ height: 90, width: 90, marginLeft: 10,borderRadius: 20, }} source={{ uri: avatar ? avatar : 'https://www.fote.org.uk/wp-content/uploads/2017/03/profile-icon.png' }} />
+          {/* <Image style={{ height: 90, width: 90, marginLeft: 10,borderRadius: 20, }} source={{ uri: avatar ? avatar : 'https://www.fote.org.uk/wp-content/uploads/2017/03/profile-icon.png' }} />
           <View style={styles.flexRow}>
             <HMIcon name="cloud-upload" color="grey" size={27} />
             <Text onPress={uploadImage} style={[styles.textBlack, { marginTop: 2, marginLeft: 5 }, styles.fs5, styles.mb2]}>Upload/Change Picture</Text>
-          </View>
+          </View> */}
           <TextInput style={[styles.input, { marginTop: -5 }]}
             value={Name}
             onChangeText={(e) => setName(e)}

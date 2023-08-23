@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { Image, StyleSheet, Alert, Text, View, TextInput, Button, TouchableOpacity, SafeAreaView, ToastAndroid } from 'react-native'
 import styles from '../style/style'
-import { useDispatch } from 'react-redux';
-import { add } from '../redux/reducer/loginslice';
+// import { useDispatch } from 'react-redux';
+// import { add } from '../redux/reducer/loginslice';
 
 function Login ({ navigation }: any)  {
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const Submit = () => {
         if (Email == '' || Password == '') {
             ToastAndroid.show(
@@ -15,12 +15,12 @@ function Login ({ navigation }: any)  {
                 ToastAndroid.SHORT
             )
         } else {
-            dispatch(
-                add({
-                    email: Email,
-                    password: Password,
-                })
-            )
+            // dispatch(
+            //     add({
+            //         email: Email,
+            //         password: Password,
+            //     })
+            // )
             ToastAndroid.showWithGravity(
                 'Login Successful',
                 ToastAndroid.SHORT,
