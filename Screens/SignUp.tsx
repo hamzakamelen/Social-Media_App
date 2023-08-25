@@ -1,17 +1,19 @@
-import  { useState } from 'react'
-import { Image, StyleSheet,ToastAndroid, Alert, Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native'
+import { useEffect, useState } from 'react'
+import { Image, StyleSheet, ToastAndroid, Alert, Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import styles from '../style/style'
 import { SafeAreaView } from 'react-native-safe-area-context';
 // import ImagePicker, { ImageOrVideo } from 'react-native-image-crop-picker'
-import HMIcon from '../Components/Icons';
-// import { useDispatch } from 'react-redux';
+// import HMIcon from '../Components/Icons';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { registerUser } from '../redux/actions/userAction';
 // import { add } from '../redux/reducer/signupslice';
 
-function SignUp ({ navigation }: any) {
+function SignUp({ navigation }: any) {
   const [Name, setName] = useState('');
   const [Email, setEmail] = useState('');
   const [Password, setPassword] = useState('');
   const [ConfirmPassword, setConfirmPassword] = useState('');
+  // const {error,user}= useSelector((state:any)=>state.user)
   // const [avatar, setavatar] = useState('');
   // const dispatch = useDispatch();
 
@@ -29,30 +31,24 @@ function SignUp ({ navigation }: any) {
   //   })
   // }
 
+  // useEffect(() => {
+  //   if(error){
+  //     Alert.alert(error);
+  //   }
+  // }, [error])
+
   const Submit = () => {
-    if(Name==''||Email==''||Password==''||ConfirmPassword==''){
+    if (Name == '' || Email == '' || Password == '' || ConfirmPassword == '') {
       ToastAndroid.show(
         "Please Fill All Fields",
         ToastAndroid.SHORT
       )
-    }else{
-      // dispatch(
-      //   add({
-      //     profilepicture: avatar,
-      //     name: Name,
-      //     email: Email,
-      //     password: Password,
-      //     confirmpassword: ConfirmPassword
-      //   })
-      // )
+    } else {
+      // registerUser(Name,Email,Password,ConfirmPassword)(dispatch);
       navigation.navigate('Login')
       Alert.alert("Account Created Successfully")
     }
   }
-
-
-
-
   return (
     <SafeAreaView>
       <View style={[styles.bgWhite, styles.h100, styles.p1]}>
@@ -61,7 +57,7 @@ function SignUp ({ navigation }: any) {
             source={require('../Assets/Threads.png')} />
           <Text
             style={[STYLE.heading, styles.textCenter, styles.my3, styles.textBold,
-            styles.textBlack]}>Sign Up</Text>
+            styles.textBlack]}>Register</Text>
           {/* <Image style={{ height: 90, width: 90, marginLeft: 10,borderRadius: 20, }} source={{ uri: avatar ? avatar : 'https://www.fote.org.uk/wp-content/uploads/2017/03/profile-icon.png' }} />
           <View style={styles.flexRow}>
             <HMIcon name="cloud-upload" color="grey" size={27} />

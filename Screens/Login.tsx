@@ -4,7 +4,7 @@ import styles from '../style/style'
 // import { useDispatch } from 'react-redux';
 // import { add } from '../redux/reducer/loginslice';
 
-function Login ({ navigation }: any)  {
+function Login({ navigation }: any) {
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
     // const dispatch = useDispatch();
@@ -29,7 +29,6 @@ function Login ({ navigation }: any)  {
             navigation.navigate('Home')
         }
     }
-
 
     return (
         <SafeAreaView>

@@ -4,9 +4,9 @@ import styles from '../style/style'
 
 const Notification = () => {
   return (
-    <View style={[styles.bgBlack,styles.h100]}>
-    <Text style={styles.fs1}>Notification</Text>
-   </View>
+    <View style={[styles.bgLightBlack, styles.h100, styles.p2]}>
+      <Text style={[styles.fs2, styles.textBold, styles.textLight]}>Activity</Text>
+    </View>
   )
 }
 

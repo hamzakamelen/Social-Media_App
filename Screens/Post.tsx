@@ -4,7 +4,7 @@ import styles from '../style/style'
 
 const Post = () => {
   return (
-    <View style={[styles.bgBlack,styles.h100]}>
+    <View style={[styles.bgLightBlack,styles.h100]}>
     <Text style={styles.fs1}>Post</Text>
    </View>
   )

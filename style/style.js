@@ -80,6 +80,9 @@ const styling = {
   bgBlack: {
     backgroundColor: _black,
   },
+  bgLightBlack:{
+    backgroundColor: "#343a40"
+  },
   bgInfo: {
     backgroundColor: _info,
   },
