@@ -20,11 +20,12 @@ function TabNavigation() {
                     headerShown: false,
                     tabBarHideOnKeyboard: true,
                     tabBarStyle: {
-                        position: 'absolute',
+                        position: 'relative',
                         backgroundColor: "#343a40",
                         borderColor: 'white',
                         left: 2,
                         right: 2,
+                        bottom:1,
                         borderRadius: 10,
                         elevation: 0,
                         height: 63,
