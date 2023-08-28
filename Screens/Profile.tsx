@@ -55,7 +55,7 @@ const Profile = () => {
           </View>
         </View>
         <View style={[styles.borderTop1, { borderColor: "#343a40" }, styles.borderBottom1, styles.flexRow, styles.justifyContentBetween]}>
-          <TouchableOpacity style={[styles.ms1,]}><Text style={[styles.textBold, { fontSize: 16 }, styles.p1, styles.textWhite, styles.textCenter]}>80 Posts</Text></TouchableOpacity>
+          <View style={[styles.ms1,]}><Text style={[styles.textBold, { fontSize: 16 }, styles.p1, styles.textWhite, styles.textCenter]}>80 Posts</Text></View>
           <TouchableOpacity><Text style={[styles.textBold, { fontSize: 16 }, styles.p1, styles.textWhite, styles.borderLeft1, styles.textCenter]}>80 Followers</Text></TouchableOpacity>
           <TouchableOpacity><Text style={[styles.textBold, { fontSize: 16 }, styles.p1, styles.textWhite, styles.borderLeft1, styles.textCenter]}>80 Following</Text></TouchableOpacity>
         </View>

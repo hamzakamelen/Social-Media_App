@@ -12,7 +12,6 @@ import { Text, View } from 'react-native';
 function TabNavigation() {
     const Tab = createBottomTabNavigator();
     return (
-        <NavigationContainer>
             <Tab.Navigator
                 screenOptions={{
                     tabBarActiveBackgroundColor: "#343a60",
@@ -34,7 +33,7 @@ function TabNavigation() {
                     }
                 }}
             >
-                <Tab.Screen name="Home" component={Home}
+                <Tab.Screen name="Homes" component={Home}
                     options={{
                         tabBarIcon: () => (
                             <View>
@@ -116,7 +115,6 @@ function TabNavigation() {
                         )
                     }} />
             </Tab.Navigator>
-        </NavigationContainer>
     )
 }
 export default TabNavigation;

@@ -5,6 +5,8 @@ import Login from '../Screens/Login'
 import SignUp from '../Screens/SignUp'
 import Home from '../Screens/Home';
 import TabNavigation from './Tabs';
+import Replies from '../Screens/Replies';
+import Following from '../Screens/Following';
 
 const StackNavigation = () => {
   const Stack = createNativeStackNavigator()
@@ -20,6 +22,16 @@ const StackNavigation = () => {
         <Stack.Screen options={{
           headerShown: false
         }} name="Home" component={TabNavigation} />
+                <Stack.Screen options={{
+          headerShown: false
+        }} name="Replies" component={Replies} />
+                <Stack.Screen options={{
+          headerShown: false
+        }} name="Followers" component={Following} />
+                <Stack.Screen options={{
+          headerShown: false
+        }} name="Following" component={Following} />
+
       </Stack.Navigator>
     </NavigationContainer>
   )
