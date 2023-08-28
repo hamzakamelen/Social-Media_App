@@ -60,6 +60,13 @@ function TabNavigation() {
                 <Tab.Screen name="Post" component={Post}
                     options={{
                         tabBarActiveBackgroundColor: "#343a35",
+                        tabBarStyle:{
+                            display:"none"
+                        },
+                        headerShown:true,
+                        headerStyle:{
+                            backgroundColor:"blue"
+                        },
                         tabBarIcon: () => (
                             <View style={[{ marginTop: -8 }]}>
                                 <View style={[styles.bgDanger, styles.roundedPill, { marginLeft: -4 }]}>
