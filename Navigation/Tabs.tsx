@@ -13,7 +13,7 @@ function TabNavigation({navigation}:any) {
     const Tab = createBottomTabNavigator();
     return (
         <Tab.Navigator
-        initialRouteName='Post'
+        initialRouteName='Homes'
             screenOptions={{
                 tabBarActiveBackgroundColor: "#343a60",
                 tabBarShowLabel: false,
