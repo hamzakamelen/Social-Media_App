@@ -524,6 +524,9 @@ const styling = {
 
     elevation: 24,
   },
+  p: {
+    padding: 5,
+  },
   p1: {
     padding: 10,
   },
@@ -674,6 +677,9 @@ const styling = {
   mx5: {
     marginHorizontal: 50,
   },
+  ms: {
+    marginLeft: 5,
+  },
   ms1: {
     marginLeft: 10,
   },
@@ -718,6 +724,9 @@ const styling = {
   },
   mt5: {
     marginTop: 50,
+  },
+  mb: {
+    marginBottom: 5,
   },
   mb1: {
     marginBottom: 10,

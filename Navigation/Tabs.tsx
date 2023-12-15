@@ -15,18 +15,17 @@ function TabNavigation({navigation}:any) {
         <Tab.Navigator
         initialRouteName='Homes'
             screenOptions={{
-                tabBarActiveBackgroundColor: "#343a60",
+                tabBarActiveBackgroundColor: '#343a40',
                 tabBarShowLabel: false,
                 headerShown: false,
                 tabBarHideOnKeyboard: true,
                 tabBarStyle: {
                     position: 'relative',
-                    backgroundColor: "#343a40",
-                    borderColor: 'white',
-                    left: 2,
-                    right: 2,
+                    backgroundColor: "black",
+                    borderColor: 'black',
+                    left: 0,
+                    right: 1,
                     bottom: 1,
-                    borderRadius: 10,
                     elevation: 0,
                     height: 63,
                     ...styles.shadow3,

@@ -42,7 +42,7 @@ const Profile = () => {
                   marginLeft: 75
                 },
               ]}
-              source={{ uri: "https://scontent.fkhi8-1.fna.fbcdn.net/v/t1.6435-9/86794394_787989285021157_3379173860678041600_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_eui2=AeH5PO1Hv2hq5xCorItaTnX759OQtX360Rrn05C1ffrRGooupLep2ILAvPm55BpVxbUGo7QMek4ws2ORHmWLkVip&_nc_ohc=a8nMk1wP4HgAX8ig7Dj&_nc_ht=scontent.fkhi8-1.fna&oh=00_AfC5VJ9cqNLYYYx9oKiSxlTfFj_9XrKOtcTvE2vfgiTqwA&oe=6509D165" }}
+              source={{ uri: "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=600" }}
             />
           </View>
           <Text style={[{ marginTop: -68 }]}>hamzakamelen_2244</Text>
@@ -60,10 +60,10 @@ const Profile = () => {
           <TouchableOpacity><Text style={[styles.textBold, { fontSize: 16 }, styles.p1, styles.textWhite, styles.borderLeft1, styles.textCenter]}>80 Following</Text></TouchableOpacity>
         </View>
         <ScrollView>
-          <View style={[styles.flexRow, styles.flexWrap]}>
+          <View style={[styles.flexRow, styles.flexWrap,styles.bgBlack]}>
             {postData && Array.isArray(postData) && postData.map((x, i) => (
               <TouchableOpacity key={i}>
-                <Image height={120} width={120} source={{ uri: x }} />
+                <Image height={140} width={120} source={{ uri: x }} />
               </TouchableOpacity>
             ))}
           </View>

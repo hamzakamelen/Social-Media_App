@@ -39,26 +39,26 @@ const Post = ({ navigation }: any) => {
           <Image
             style={[
               {
-                height: 80,
-                width: 80,
+                height: 60,
+                width: 60,
                 borderRadius: 50,
               },
             ]}
-            source={{ uri: "https://scontent.fkhi8-1.fna.fbcdn.net/v/t1.6435-9/86794394_787989285021157_3379173860678041600_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_eui2=AeH5PO1Hv2hq5xCorItaTnX759OQtX360Rrn05C1ffrRGooupLep2ILAvPm55BpVxbUGo7QMek4ws2ORHmWLkVip&_nc_ohc=a8nMk1wP4HgAX8ig7Dj&_nc_ht=scontent.fkhi8-1.fna&oh=00_AfC5VJ9cqNLYYYx9oKiSxlTfFj_9XrKOtcTvE2vfgiTqwA&oe=6509D165" }}
+            source={{ uri: "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=600" }}
           />
           <Text style={[styles.fs4, styles.ms1, styles.mt1, styles.textBold, styles.textWhite]}>Hamza Kamelen</Text>
         </View>
-        <Text style={[{ marginLeft: 93, marginTop: -40 }]}>hamzakamelen_2244</Text>
-        <TextInput value={caption} onChangeText={(e)=>setcaption(e)} style={[styles.mt3, styles.border1, styles.p1, styles.borderLight, { borderRadius: 5 }]} multiline placeholder='Write Something '></TextInput>
-        <Image style={{ marginTop: 30, marginLeft: 10, height: 330, width: 300, borderRadius: 8, }} source={{ uri: avatar ? avatar : 'https://lh6.googleusercontent.com/proxy/xJTqeKdDUTpCQIdSDgSC-zkek2K7N2ziuCHcASBiROTcdMwCn15OH1080m1_R_EScPMzIbnOeCSN2DBGgLE0AqZgRmVgw9KM-L9OD-KeVvN-YM00k65q=s0-d' }} />
+        <Text style={[{ marginLeft: 70, marginTop: -22 }]}>hamzakamelen_2244</Text>
+        <TextInput value={caption} onChangeText={(e)=>setcaption(e)} placeholderTextColor='grey' style={[styles.mt2, styles.p1,styles.fs5,styles.textWhite]} multiline placeholder="What's on your mind?..."></TextInput>
+        <Image style={{ marginTop: 30, marginLeft: 10, height: 330, width: 300, borderRadius: 8, }} source={{ uri: avatar ? avatar : 'https://img.freepik.com/free-photo/red-light-round-podium-black-background-mock-up_43614-950.jpg?w=740&t=st=1702666596~exp=1702667196~hmac=610f60430d7da3779d0c6ee532f333fc70d4759a1e78db18326aafa3ba0dd2de' }} />
         <TouchableOpacity onPress={uploadImage} style={[styles.flexRow, styles.ms3, styles.mt2]}>
           <HMIcon name="photo-library" color="white" size={32} />
           <Text style={[styles.textWhite, { marginTop: 2, marginLeft: 5 }, styles.fs5, styles.mb2]}>Upload Photo From Gallery</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={Submit} style={[{ marginTop: -5, marginLeft: 100, backgroundColor: "blue", borderRadius: 10, width: 110 }, styles.flexRow]}>
-          <Text style={[styles.textWhite, styles.textCenter, styles.fs5, styles.p1, styles.textBold,]} >Upload</Text>
-          <View style={[styles.mt1]}>
-            <HMIcon name="upload" size={30} color="white" />
+        <TouchableOpacity onPress={Submit} style={[styles.alignItemsCenter,{backgroundColor: "darkblue", borderRadius: 10, width: '100%' }, styles.flexRow]}>
+          <Text style={[styles.textWhite, styles.textCenter, styles.fs5, styles.p1, styles.textBold,{marginLeft:100}]} >Upload</Text>
+          <View style={{marginLeft:-5}}>
+            <HMIcon name="upload" size={25} color="white" />
           </View>
         </TouchableOpacity>
       </View>
