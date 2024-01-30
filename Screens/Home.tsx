@@ -4,7 +4,7 @@ import HMIcon from '../Components/Icons'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useState } from 'react'
 // import { useSelector } from 'react-redux'
-const Home = () => {
+const Home = ({ navigation }: any) => {
   const posts = [
     {
       profile: "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -54,6 +54,9 @@ const Home = () => {
   // const Data:any = useSelector((a)=>a);
   // console.log(Data.Login);
   // console.log(Data.Signup);
+  const comments = () => {
+    navigation.navigate('Comments')
+  }
   return (
     <SafeAreaView>
       <View style={[styles.bgLightBlack, styles.h100]}>
@@ -97,9 +100,9 @@ const Home = () => {
                     </TouchableOpacity>
                     <Text style={{ marginTop: 5, color: "white" }}>{x.likes} Likes</Text>
                   </View>
-                  <View style={{ marginLeft: -15 }}>
+                  <TouchableOpacity onPress={comments} style={{ marginLeft: -15 }}>
                     <HMIcon name="chat-bubble-outline" color="lightgrey" size={30} />
-                  </View>
+                  </TouchableOpacity>
                   <View style={{ marginLeft: 15 }}>
                     <HMIcon name="send" color="lightgrey" size={30} />
                   </View>

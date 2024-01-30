@@ -3,7 +3,7 @@ import { Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
 import styles from '../style/style'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-const Profile = () => {
+const Profile = ({ navigation }: any) => {
   const postData = [
     "https://images.unsplash.com/photo-1634300207026-87f0d9bd723d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExfENEd3V3WEpBYkV3fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
     "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q2Fyc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
@@ -56,11 +56,11 @@ const Profile = () => {
         </View>
         <View style={[styles.borderTop1, { borderColor: "#343a40" }, styles.borderBottom1, styles.flexRow, styles.justifyContentBetween]}>
           <View style={[styles.ms1,]}><Text style={[styles.textBold, { fontSize: 16 }, styles.p1, styles.textWhite, styles.textCenter]}>80 Posts</Text></View>
-          <TouchableOpacity><Text style={[styles.textBold, { fontSize: 16 }, styles.p1, styles.textWhite, styles.borderLeft1, styles.textCenter]}>80 Followers</Text></TouchableOpacity>
-          <TouchableOpacity><Text style={[styles.textBold, { fontSize: 16 }, styles.p1, styles.textWhite, styles.borderLeft1, styles.textCenter]}>80 Following</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Followers')}><Text style={[styles.textBold, { fontSize: 16 }, styles.p1, styles.textWhite, styles.borderLeft1, styles.textCenter]}>80 Followers</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Following')}><Text style={[styles.textBold, { fontSize: 16 }, styles.p1, styles.textWhite, styles.borderLeft1, styles.textCenter]}>80 Following</Text></TouchableOpacity>
         </View>
         <ScrollView>
-          <View style={[styles.flexRow, styles.flexWrap,styles.bgBlack]}>
+          <View style={[styles.flexRow, styles.flexWrap, styles.bgBlack]}>
             {postData && Array.isArray(postData) && postData.map((x, i) => (
               <TouchableOpacity key={i}>
                 <Image height={140} width={120} source={{ uri: x }} />

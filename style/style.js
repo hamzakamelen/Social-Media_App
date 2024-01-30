@@ -695,6 +695,9 @@ const styling = {
   ms5: {
     marginLeft: 50,
   },
+  ms6: {
+    marginLeft: 60,
+  },
   me1: {
     marginEnd: 10,
   },

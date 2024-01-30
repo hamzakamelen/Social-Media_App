@@ -9,11 +9,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import styles from '../style/style';
 import HMIcon from '../Components/Icons';
 import { Text, TouchableOpacity, View } from 'react-native';
-function TabNavigation({navigation}:any) {
+function TabNavigation({ navigation }: any) {
     const Tab = createBottomTabNavigator();
     return (
         <Tab.Navigator
-        initialRouteName='Homes'
+            initialRouteName='Homes'
             screenOptions={{
                 tabBarActiveBackgroundColor: '#343a40',
                 tabBarShowLabel: false,
@@ -64,17 +64,17 @@ function TabNavigation({navigation}:any) {
                         display: "none"
                     },
                     headerShown: true,
-                    headerTitleAlign:"center",
-                    headerTitleStyle:{
-                        color:"white",
-                        fontSize:25
+                    headerTitleAlign: "center",
+                    headerTitleStyle: {
+                        color: "white",
+                        fontSize: 25
                     },
                     headerStyle: {
-                       backgroundColor: "black",
+                        backgroundColor: "black",
                     },
-                    headerLeft:()=>(
-                        <TouchableOpacity  style={[styles.ms1]} onPress={()=>(navigation.navigate('Homes'))} >
-                        <HMIcon name="arrow-back-ios-new" color="white" size={32} />
+                    headerLeft: () => (
+                        <TouchableOpacity style={[styles.ms1]} onPress={() => (navigation.navigate('Homes'))} >
+                            <HMIcon name="arrow-back-ios-new" color="white" size={32} />
                         </TouchableOpacity>
                     ),
                     tabBarIcon: () => (

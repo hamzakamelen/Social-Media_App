@@ -5,36 +5,37 @@ import Login from '../Screens/Login'
 import SignUp from '../Screens/SignUp'
 import Home from '../Screens/Home';
 import TabNavigation from './Tabs';
-import Replies from '../Screens/Replies';
 import Following from '../Screens/Following';
+import Comments from '../Screens/Comments';
+import Followers from '../Screens/Followers';
 
 const StackNavigation = () => {
-  const Stack = createNativeStackNavigator()
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen options={{
-          headerShown: false
-        }} name="Login" component={Login} />
-        <Stack.Screen options={{
-          headerShown: false
-        }} name="SignUp" component={SignUp} />
-        <Stack.Screen options={{
-          headerShown: false
-        }} name="Home" component={TabNavigation} />
+    const Stack = createNativeStackNavigator()
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen options={{
-          headerShown: false
-        }} name="Replies" component={Replies} />
+                    headerShown: false
+                }} name="Login" component={Login} />
                 <Stack.Screen options={{
-          headerShown: false
-        }} name="Followers" component={Following} />
+                    headerShown: false
+                }} name="SignUp" component={SignUp} />
                 <Stack.Screen options={{
-          headerShown: false
-        }} name="Following" component={Following} />
+                    headerShown: false
+                }} name="Home" component={TabNavigation} />
+                <Stack.Screen options={{
+                    headerShown: false
+                }} name="Comments" component={Comments} />
+                <Stack.Screen options={{
+                    headerShown: false
+                }} name="Followers" component={Followers} />
+                <Stack.Screen options={{
+                    headerShown: false
+                }} name="Following" component={Following} />
 
-      </Stack.Navigator>
-    </NavigationContainer>
-  )
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
 }
 
 export default StackNavigation
