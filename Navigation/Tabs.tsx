@@ -67,14 +67,14 @@ function TabNavigation({ navigation }: any) {
                     headerTitleAlign: "center",
                     headerTitleStyle: {
                         color: "white",
-                        fontSize: 25
+                        fontSize: 20
                     },
                     headerStyle: {
-                        backgroundColor: "black",
+                        backgroundColor: '#343a40',
                     },
                     headerLeft: () => (
                         <TouchableOpacity style={[styles.ms1]} onPress={() => (navigation.navigate('Homes'))} >
-                            <HMIcon name="arrow-back-ios-new" color="white" size={32} />
+                            <HMIcon name="arrow-back-ios-new" color="white" size={25} />
                         </TouchableOpacity>
                     ),
                     tabBarIcon: () => (

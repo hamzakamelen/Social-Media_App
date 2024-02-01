@@ -8,6 +8,7 @@ import TabNavigation from './Tabs';
 import Following from '../Screens/Following';
 import Comments from '../Screens/Comments';
 import Followers from '../Screens/Followers';
+import UserProfiles from '../Screens/UserProfiles';
 
 const StackNavigation = () => {
     const Stack = createNativeStackNavigator()
@@ -32,7 +33,9 @@ const StackNavigation = () => {
                 <Stack.Screen options={{
                     headerShown: false
                 }} name="Following" component={Following} />
-
+                <Stack.Screen options={{
+                    headerShown: false
+                }} name="UserProfiles" component={UserProfiles} />
             </Stack.Navigator>
         </NavigationContainer>
     )

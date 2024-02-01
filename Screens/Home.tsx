@@ -81,7 +81,7 @@ const Home = ({ navigation }: any) => {
                       source={{ uri: x.profile }}
                     />
                     <Text style={[styles.textWhite, styles.textBold, styles.ms1, styles.fs5]}>{x.name}</Text>
-                    {x.Verified ? <HMIcon name="recommend" color="lightgreen" size={23} /> : null}
+                    {x.Verified && <HMIcon name="recommend" color="lightgreen" size={23} />}
                     <Text style={[{ marginLeft: 95, fontSize: 15 }]}>{x.time}</Text>
                     <View style={{ marginLeft: 8 }}>
                       <HMIcon name="more-vert" color="white" size={25} />
@@ -95,8 +95,8 @@ const Home = ({ navigation }: any) => {
                 <View style={[styles.ms1, styles.flexRow, , styles.mb1]}>
                   <View>
                     {/* //Like Button */}
-                    <TouchableOpacity onPress={() => (x.like === false ? setislike(true) : setislike(false))} style={{ marginLeft: 3 }}>
-                      {x.like ? <HMIcon name="favorite" color="red" size={30} /> : <HMIcon name="favorite-outline" color="lightgrey" size={30} />}
+                    <TouchableOpacity onPress={() => setislike(!like)} style={{ marginLeft: 3 }}>
+                      <HMIcon name={x.like ? "favorite" : "favorite-outline"} color={x.like ? "red" : "lightgrey"} size={30} />
                     </TouchableOpacity>
                     <Text style={{ marginTop: 5, color: "white" }}>{x.likes} Likes</Text>
                   </View>
@@ -106,9 +106,9 @@ const Home = ({ navigation }: any) => {
                   <View style={{ marginLeft: 15 }}>
                     <HMIcon name="send" color="lightgrey" size={30} />
                   </View>
-                  <TouchableOpacity onPress={() => (x.saved === false ? setisSaved(true) : setisSaved(false))} style={{ marginLeft: 185 }}>
-                    {x.saved === true ? <HMIcon name="bookmark" color="lightgreen" size={30} /> : <HMIcon name="bookmark-outline" color="white" size={30} />}
-                    <Text style={{ marginLeft: -5 }}>{x.saved === true ? "Saved" : "Save"}</Text>
+                  <TouchableOpacity onPress={() => setisSaved(!Saved)} style={{ marginLeft: 185 }}>
+                    <HMIcon name={x.saved ? "bookmark" : "bookmark-outline"} color={x.saved ? "lightgreen" : "white"} size={30} />
+                    <Text style={{ marginLeft: -5 }}>{x.saved ? "Saved" : "Save"}</Text>
                   </TouchableOpacity>
                 </View>
               </View>

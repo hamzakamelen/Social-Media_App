@@ -80,7 +80,7 @@ const styling = {
   bgBlack: {
     backgroundColor: _black,
   },
-  bgLightBlack:{
+  bgLightBlack: {
     backgroundColor: "#343a40"
   },
   bgInfo: {
@@ -341,6 +341,12 @@ const styling = {
   h20: {
     height: "20%",
   },
+  h10: {
+    height: "10%",
+  },
+  h05: {
+    height: "05%",
+  },
   fs: {
     fontSize: 16,
   },
@@ -370,7 +376,7 @@ const styling = {
     fontSize: 17,
     borderRadius: 30,
     backgroundColor: "#f1f1f1",
-    color:'black'
+    color: 'black'
     // shadowColor: '#000',
     // shadowOffset: {
     //   width: 0,
@@ -697,6 +703,12 @@ const styling = {
   },
   ms6: {
     marginLeft: 60,
+  },
+  ms7: {
+    marginLeft: 70,
+  },
+  ms8: {
+    marginLeft: 80,
   },
   me1: {
     marginEnd: 10,

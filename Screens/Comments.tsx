@@ -1,11 +1,21 @@
 import React from 'react'
-import {Text, View} from 'react-native'
+import { ScrollView, Text, TouchableOpacity, View, } from 'react-native'
 import styles from '../style/style'
-const Comments = () => {
+import HMIcon from '../Components/Icons'
+import { SafeAreaView } from 'react-native-safe-area-context'
+const Comments = ({ navigation }: any) => {
   return (
-    <View style={[styles.h100,styles.bgLightBlack]}>
-    <Text>Comments</Text>
-    </View>
+    <SafeAreaView>
+        <View style={[{ height: '6%' }, styles.bgLightBlack, styles.flexRow]}>
+          <TouchableOpacity style={[styles.ms2, styles.mt1]} onPress={() => (navigation.navigate('Home'))} >
+            <HMIcon name="arrow-back-ios-new" color="white" size={25} />
+          </TouchableOpacity>
+          <Text style={[styles.fs4, styles.mt1, styles.textBold, { marginLeft: 100 }]}>Comments</Text>
+        </View>
+        <View style={[styles.h100, styles.bgLightBlack]}>
+          <Text>Comments</Text>
+        </View>
+    </SafeAreaView>
   )
 }
 
