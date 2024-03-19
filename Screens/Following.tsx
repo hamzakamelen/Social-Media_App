@@ -3,7 +3,7 @@ import { ScrollView, Text, TouchableOpacity, View, } from 'react-native'
 import styles from '../style/style'
 import HMIcon from '../Components/Icons'
 import { SafeAreaView } from 'react-native-safe-area-context'
-const Following = ({navigation}:any) => {
+const Following = ({ navigation }: any) => {
     return (
         <SafeAreaView>
             <View style={[{ height: '6%' }, styles.bgLightBlack, styles.flexRow]}>
