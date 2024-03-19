@@ -12,7 +12,8 @@ const Home = ({ navigation }: any) => {
       name: "Hamza Kamelen",
       time: "2hr",
       occupation: "MERN Stack Developer",
-      image: '../Assets/Post1.jpg',
+      image: 'https://nationalpositions.com/wp-content/uploads/2020/08/nonamefound1597339550614769.jpeg',
+      caption: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
       Verified: false,
       likes: 200,
       saved: false
@@ -23,7 +24,8 @@ const Home = ({ navigation }: any) => {
       name: "Talha Kamelen",
       time: "1d",
       occupation: "Graphic Designer",
-      image: '../Assets/Post2.jpg',
+      image: 'https://nationalpositions.com/wp-content/uploads/2020/08/nonamefound1597339550614769.jpeg',
+      caption: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
       Verified: true,
       likes: 250,
       saved: true
@@ -34,7 +36,7 @@ const Home = ({ navigation }: any) => {
       name: "Anas Kamelen",
       time: "2m",
       occupation: "MEAN Stack Developer",
-      image: '../Assets/Post3.jpg',
+      image: 'https://nationalpositions.com/wp-content/uploads/2020/08/nonamefound1597339550614769.jpeg',
       Verified: true,
       likes: 100,
       saved: false
@@ -45,8 +47,8 @@ const Home = ({ navigation }: any) => {
       name: "M. Kamelen",
       time: "2d",
       occupation: "Full Stack Developer",
-      image: '../Assets/Post4.jpg',
-      Verified: false,
+      image: 'https://nationalpositions.com/wp-content/uploads/2020/08/nonamefound1597339550614769.jpeg', Verified: false,
+      caption: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
       likes: 120,
       saved: true
     }
@@ -90,7 +92,7 @@ const Home = ({ navigation }: any) => {
                   <Text style={{ marginLeft: 60, marginTop: -25 }}>{x.occupation}</Text>
                 </View>
                 <View style={[styles.p, { marginTop: -10 }]}>
-                  <Image style={{ borderRadius: 5, height: 400, width: 350 }} source={{ uri: 'https://assets.visme.co/templates/banners/thumbnails/i_We-re-Hiring-LinkedIn-Post_full.jpg' }} />
+                  <Image style={{ borderRadius: 5, height: 400, width: 350 }} source={{ uri: x.image }} />
                 </View>
                 <View style={[styles.ms1, styles.flexRow, , styles.mb1]}>
                   <View>

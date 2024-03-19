@@ -13,7 +13,7 @@ const Following = ({navigation}:any) => {
                 <Text style={[styles.fs4, styles.mt1, styles.textBold, { marginLeft: 100 }]}>Following</Text>
             </View>
             <View style={[styles.h100, styles.bgLightBlack]}>
-                <Text>Following</Text>
+                {/* <Text>Following</Text> */}
             </View>
         </SafeAreaView>
     )
