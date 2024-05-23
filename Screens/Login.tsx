@@ -32,11 +32,11 @@ function Login({ navigation }: any) {
 
     return (
         <SafeAreaView>
-            <View style={[styles.bgWhite, styles.h100, styles.p1]}>
+            <View style={[styles.bgWhite, styles.h100, styles.p2]}>
                 <Image style={STYLE.image}
                     source={require('../Assets/Threads.png')} />
                 <Text
-                    style={[STYLE.heading, styles.textCenter, styles.my5, styles.textBold,
+                    style={[STYLE.heading, styles.textCenter, styles.my3,styles.mx1, styles.textBold,
                     styles.textBlack]}>Login</Text>
                 <TextInput style={[styles.input]}
                     value={Email}
@@ -69,13 +69,13 @@ function Login({ navigation }: any) {
 }
 const STYLE = StyleSheet.create({
     image: {
-        height: 108,
-        width: 200,
+        height: 75,
+        width: 120,
         marginTop: 90,
-        marginLeft: 70
+        marginLeft: 100
     },
     heading: {
-        fontSize: 40,
+        fontSize: 35,
     }
 })
 export default Login
