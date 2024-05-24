@@ -51,14 +51,16 @@ function SignUp({ navigation }: any) {
   }
   return (
     <SafeAreaView>
-      <View style={[styles.bgWhite, styles.h100, styles.p1]}>
+      <View style={[styles.bgWhite, styles.h100, styles.p2]}>
         <ScrollView>
           <Image style={STYLE.image}
             source={require('../Assets/Threads.png')} />
           <Text
-            style={[STYLE.heading, styles.textCenter, styles.my3, styles.textBold,
-            styles.textBlack]}>Register</Text>
-          {/* <Image style={{ height: 90, width: 90, marginLeft: 10,borderRadius: 20, }} source={{ uri: avatar ? avatar : 'https://www.fote.org.uk/wp-content/uploads/2017/03/profile-icon.png' }} />
+            style={[styles.fs1, styles.textCenter, styles.mt3, styles.textBold,
+            styles.textBlack]}>Welcome!</Text>
+            <Text style={[styles.fs2, styles.textCenter,styles.mt1,styles.mb3, styles.textBold,
+            styles.textBlack]}>Create New Account</Text>
+          {/* <Image style={{ height: 90, widht: 90, marginLeft: 10,borderRadius: 20, }} source={{ uri: avatar ? avatar : 'https://www.fote.org.uk/wp-content/uploads/2017/03/profile-icon.png' }} />
           <View style={styles.flexRow}>
             <HMIcon name="cloud-upload" color="grey" size={27} />
             <Text onPress={uploadImage} style={[styles.textBlack, { marginTop: 2, marginLeft: 5 }, styles.fs5, styles.mb2]}>Upload/Change Picture</Text>
@@ -94,7 +96,7 @@ function SignUp({ navigation }: any) {
               styles.textSecondary]}> Login</Text>
             </Text>
           </View>
-          <TouchableOpacity onPress={Submit} style={[styles.btn, styles.bgBlack, styles.my1]}>
+          <TouchableOpacity onPress={Submit} style={[styles.btn, styles.bgBlack, styles.my2]}>
             <Text
               style={[styles.textCenter, styles.textBold,
               styles.textWhite, styles.fs3]}>Sign Up</Text>
@@ -106,13 +108,10 @@ function SignUp({ navigation }: any) {
 }
 const STYLE = StyleSheet.create({
   image: {
-    height: 108,
-    width: 200,
-    marginTop: 90,
-    marginLeft: 70
-  },
-  heading: {
-    fontSize: 40,
-  },
+    height: 75,
+    width: 120,
+    marginTop: 55,
+    marginLeft: 100
+  }
 })
 export default SignUp

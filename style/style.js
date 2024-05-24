@@ -365,6 +365,9 @@ const styling = {
   fs5: {
     fontSize: 18,
   },
+  fs6: {
+    fontSize: 15,
+  },
   main: {
     flex: 1,
   },
